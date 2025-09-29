@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  get "fashions/index"
+  get "fashions/new"
+  get "fashions/create"
+  get "fashions/show"
+  get "fashions/edit"
+  get "fashions/update"
+  get "fashions/destroy"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

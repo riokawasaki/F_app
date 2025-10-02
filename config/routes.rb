@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  
+  resources :fashions, only: [:index, :new, :create]
+  
+  root 'fashions#index'
+  
   get "fashions/index"
   get "fashions/new"
   get "fashions/create"

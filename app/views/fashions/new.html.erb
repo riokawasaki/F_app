@@ -1,2 +1,28 @@
-<h1>Fashions#new</h1>
-<p>Find me in app/views/fashions/new.html.erb</p>
+<!-- app/views/fashions/new.html.erb -->
+<h2>コーデを登録</h2>
+
+<%= form_with model: @fashion, local: true do |f| %>
+  <p>
+    <%= f.label :recorded_on, "登録日" %><br>
+    <%= f.date_field :recorded_on %>
+  </p>
+
+  <p>
+    <%= f.label :weather, "天気" %><br>
+    <%= f.text_field :weather %>
+  </p>
+
+  <p>
+    <%= f.label :temperature, "気温" %><br>
+    <%= f.number_field :temperature %>
+  </p>
+
+  <p>
+    <%= f.label :image, "コーデ画像" %><br>
+    <%= f.file_field :image %>
+  </p>
+
+  <%= f.submit "登録する" %>
+<% end %>
+
+<p><%= link_to "一覧に戻る", fashions_path %></p>

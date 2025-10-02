@@ -1,2 +1,23 @@
-<h1>Fashions#index</h1>
-<p>Find me in app/views/fashions/index.html.erb</p>
+<!-- app/views/fashions/index.html.erb -->
+<h2>過去のコーデ一覧</h2>
+
+<table>
+  <% @fashions.each do |f| %>
+    <tr>
+      <td>
+        <% if f.image.attached? %>
+          <%= image_tag f.image.variant(resize_to_limit: [120, 120]) %>
+        <% else %>
+          画像なし
+        <% end %>
+      </td>
+      <td>
+        登録日: <%= f.recorded_on %><br>
+        天気: <%= f.weather %><br>
+        気温: <%= f.temperature %>℃
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "新規追加", new_fashion_path %></p>
